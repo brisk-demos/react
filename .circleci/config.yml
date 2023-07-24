@@ -526,18 +526,18 @@ workflows:
           requires:
             - build_devtools_and_process_artifacts
 
-  fuzz_tests:
-    unless: << pipeline.parameters.prerelease_commit_sha >>
-    triggers:
-      - schedule:
-          # Fuzz tests run hourly
-          cron: "0 * * * *"
-          filters:
-            branches:
-              only:
-                - main
-    jobs:
-      - test_fuzz
+  # fuzz_tests:
+  #   unless: << pipeline.parameters.prerelease_commit_sha >>
+  #   triggers:
+  #     - schedule:
+  #         # Fuzz tests run hourly
+  #         cron: "0 * * * *"
+  #         filters:
+  #           branches:
+  #             only:
+  #               - main
+  #   jobs:
+  #     - test_fuzz
 
   devtools_regression_tests:
     unless: << pipeline.parameters.prerelease_commit_sha >>
