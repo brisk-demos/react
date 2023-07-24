@@ -33,7 +33,7 @@ aliases:
       paths:
         - ~/.cache/yarn
 
-  - &TEST_PARALLELISM 20
+  - &TEST_PARALLELISM 4
 
   - &attach_workspace
     at: build
