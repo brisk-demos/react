@@ -87,7 +87,7 @@ jobs:
   yarn_flow:
     docker: *docker
     environment: *environment
-    parallelism: 5
+    parallelism: 4
 
     steps:
       - checkout
