@@ -414,7 +414,7 @@ workflows:
       - brisk/hello
       - yarn_flow:
           requires:
-            brisk/hello
+            - brisk/hello
           filters:
             branches:
               ignore:
