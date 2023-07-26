@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  brisk: brisk/brisk-setup-orb@0.0.3
+  brisk: brisk/brisk-setup-orb@0.0.4
   
 
 aliases:
@@ -412,10 +412,10 @@ workflows:
   build_and_test:
     unless: << pipeline.parameters.prerelease_commit_sha >>
     jobs:
-      - brisk/install
+      - brisk/setup
       - yarn_flow:
           requires:
-            - brisk/install
+            - brisk/setup
           filters:
             branches:
               ignore:
