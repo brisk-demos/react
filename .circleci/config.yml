@@ -335,7 +335,7 @@ jobs:
         type: string
     steps:
       - checkout
-      - brisk/setup
+      - brisk/install
       - setup_node_modules
       # - run: yarn test <<parameters.args>> --ci
       - run: /usr/local/bin/brisk
@@ -348,7 +348,7 @@ jobs:
         type: string
     steps:
       - checkout
-      - brisk/setup
+      - brisk/install
       - attach_workspace:
           at: .
       - setup_node_modules
