@@ -413,6 +413,8 @@ workflows:
     jobs:
       - brisk/hello
       - yarn_flow:
+          requires:
+            brisk/hello
           filters:
             branches:
               ignore:
