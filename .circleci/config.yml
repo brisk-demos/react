@@ -411,6 +411,7 @@ workflows:
   build_and_test:
     unless: << pipeline.parameters.prerelease_commit_sha >>
     jobs:
+      - setup-brisk-orb/greet
       - yarn_flow:
           filters:
             branches:
