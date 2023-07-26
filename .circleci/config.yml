@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  brisk: brisk/brisk-setup-orb@0.0.1
+  brisk: brisk/brisk-setup-orb@0.0.2
 
 aliases:
   - &docker
