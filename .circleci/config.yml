@@ -335,6 +335,7 @@ jobs:
         type: string
     steps:
       - checkout
+      - brisk/setup
       - setup_node_modules
       # - run: yarn test <<parameters.args>> --ci
       - run: /usr/local/bin/brisk
@@ -347,6 +348,7 @@ jobs:
         type: string
     steps:
       - checkout
+      - brisk/setup
       - attach_workspace:
           at: .
       - setup_node_modules
@@ -412,10 +414,7 @@ workflows:
   build_and_test:
     unless: << pipeline.parameters.prerelease_commit_sha >>
     jobs:
-      - brisk/setup
       - yarn_flow:
-          requires:
-            - brisk/setup
           filters:
             branches:
               ignore:
@@ -431,8 +430,6 @@ workflows:
               ignore:
                 - builds/facebook-www
       - yarn_test:
-          requires:
-            - brisk/setup
           filters:
             branches:
               ignore:
@@ -476,7 +473,6 @@ workflows:
       - yarn_test_build:
           requires:
             - yarn_build
-            - brisk/setup
           matrix:
             parameters:
               args:
